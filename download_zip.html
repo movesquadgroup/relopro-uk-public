@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8"><title>Download ZIP</title></head>
+  <body>
+    <p>Preparing download…</p>
+    <script>
+      const b64 = `UEsDBBQAAAAAAI05h1cAAAAAAAAAAAAAAAAJAAAACWluZGV4Lmh0bWzLS81LLsnMz1NLySxLzWfLz09Ndc9LzskvTdXLzs/VLSjKz0lVAGJjEwIKRlkAUEsBAhQAFAAAAAAAjTmHVwAAAAAAAAAAAAAAAAkAAAAAAAAAAAAgAAAAAAAAAGluZGV4Lmh0bWxaUEsFBgAAAAABAAEANgAAADcAAAAAAA==`;
+      function base64ToBlob(b64) {
+        const byteChars = atob(b64);
+        const byteNums = new Array(byteChars.length);
+        for (let i = 0; i < byteChars.length; i++) byteNums[i] = byteChars.charCodeAt(i);
+        const byteArray = new Uint8Array(byteNums);
+        return new Blob([byteArray], { type: 'application/zip' });
+      }
+      const blob = base64ToBlob(b64);
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'firebase-hosting.zip';
+      document.body.appendChild(a);
+      a.click();
+      URL.revokeObjectURL(a.href);
+      a.remove();
+    </script>
+  </body>
+</html>

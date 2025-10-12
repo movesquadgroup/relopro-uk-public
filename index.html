@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReloPro Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#0072BB',      // Medium Blue
+              'brand-secondary': '#1E91D6',     // Light Blue
+              'brand-accent': '#8FC93A',       // Lime Green
+              'brand-light': '#E6F1F8',        // A very light tint of the primary blue
+              'status-lead': '#E4CC37',        // Yellow/Gold
+              'status-booked': '#1E91D6',       // Light Blue
+              'status-quoted': '#E18335',      // Orange
+              'status-confirmed': '#8FC93A',    // Lime Green
+              'status-completed': '#6b7280',   // Gray (unchanged for neutrality)
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@19.2.0",
+    "react/": "https://aistudiocdn.com/react@19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@7.9.4",
+    "@google/generative-ai": "https://esm.run/@google/generative-ai@^0.21.0",
+    "react-beautiful-dnd": "https://aistudiocdn.com/react-beautiful-dnd@^13.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.24.0",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.4.0/"
+  }
+}
+</script>
+<!-- BEGIN: Firebase config injected for preview -->
+<script>
+  window.__FIREBASE_CONFIG__ = {
+    apiKey: "AIzaSyCM3DBFxYmFoOBgx25cGPuZ4q5LVa4Pntg",
+    authDomain: "gen-lang-client-0157482863.firebaseapp.com",
+    projectId: "gen-lang-client-0157482863",
+    storageBucket: "gen-lang-client-0157482863.appspot.com",
+    messagingSenderId: "717174694501",
+    appId: "1:717174694501:web:c095c691aa245886149c8c",
+    measurementId: "G-P9FY6J3918"
+  };
+</script>
+<!-- END: Firebase config injected for preview -->
+
+<!-- BEGIN: Force-initialise Firebase in preview (safe, no design changes) -->
+<script type="module">
+  import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+  const cfg = window.__FIREBASE_CONFIG__;
+  if (!cfg) {
+    console.warn("[Firebase] Missing window.__FIREBASE_CONFIG__");
+    window.__FIREBASE_READY__ = false;
+  } else {
+    const app = getApps().length ? getApps()[0] : initializeApp(cfg);
+    window.__FIREBASE_READY__ = true;
+    window.__FIREBASE_APP__ = app;
+    window.__FIREBASE_AUTH__ = getAuth(app);
+    window.__FIREBASE_DB__ = getFirestore(app);
+    window.__FIREBASE_STORAGE__ = getStorage(app);
+    console.log("[Firebase] initialised:", app.options.projectId, app.options.storageBucket);
+  }
+</script>
+<!-- END: Force-initialise Firebase in preview -->
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-100 dark:bg-gray-900">
+    <!-- Firebase runtime config hook -->
+    <script>
+      // Replace the placeholder strings below with the real values from Firebase Console > Project settings > Your apps (Web) > "SDK setup and configuration"
+      window.__FIREBASE_WEB_CONFIG__ = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",        // e.g. relopro.web.app or yourapp.firebaseapp.com
+        projectId: "gen-lang-client-0157482863",
+        storageBucket: "YOUR_STORAGE_BUCKET",  // e.g. gen-lang-client-0157482863.appspot.com
+        messagingSenderId: "YOUR_SENDER_ID",
+        appId: "YOUR_APP_ID",
+        // measurementId is optional
+      };
+    </script>
+    <div id="root"></div>
+  <!-- SAFE MODE: No-op diagnostics hook to avoid runtime errors -->
+  <script>
+    window.__RELPRO_PREVIEW_DIAGNOSTICS__ = window.__RELPRO_PREVIEW_DIAGNOSTICS__ || (function () {
+      console.log("[Diagnostics] Safe mode active. No diagnostics will run automatically.");
+      return { ok: true };
+    });
+  </script>
+
+  <!-- IMPORTANT: We are NOT loading any @google/* browser SDKs here to avoid ESM import errors in AI Studio preview. -->
+
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

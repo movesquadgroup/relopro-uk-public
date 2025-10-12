@@ -1,0 +1,7 @@
+{
+  "name": "ReloPro Dashboard - CRM & Operations Hub",
+  "description": "A comprehensive dashboard and CRM system for a modern removals, storage, and relocation company. This is the central hub for managing clients, operations, quoting, and all other business-critical modules.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
