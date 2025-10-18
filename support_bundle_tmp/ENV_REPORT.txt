@@ -1,0 +1,38 @@
+==== versions ====
+v20.19.5
+10.8.2
+vite/6.3.7 darwin-arm64 node-v20.19.5
+
+==== git ====
+stable-2025-10-14
+50df693e395a0ea0e48f94dd740af82f8280f976
+ M components/LiveChatWidget.tsx
+ M index.html
+ M lib/ai/estimator.ts
+?? components/LiveChatWidget.backup.tsx
+?? index.backup.html
+?? scripts/
+?? support_bundle_tmp/
+
+==== dependency probes ====
+{
+  "@google/generative-ai": "0.21.0",
+  "@hello-pangea/dnd": "^18.0.1",
+  "@vitejs/plugin-react": "^5.0.4",
+  "firebase": "^12.4.0",
+  "react": "19.2.0",
+  "react-dom": "19.2.0",
+  "react-router-dom": "7.9.4",
+  "recharts": "^2.15.4",
+  "vite": "^7.1.9"
+}
+{
+  "@types/node": "^22.14.0",
+  "@vitejs/plugin-react": "^5.0.0",
+  "dotenv": "17.2.3",
+  "typescript": "~5.8.2",
+  "vite": "^6.2.0",
+  "vite-tsconfig-paths": "5.1.4"
+}
+
+==== import probes ====
