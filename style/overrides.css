@@ -1,0 +1,9 @@
+/* Only minimal overrides that won’t affect layout */
+*:focus-visible {
+  outline: 2px solid var(--rp-primary);
+  outline-offset: 2px;
+}
+
+/* Ensure any Tailwind/utility base uses our tokens */
+.bg-token { background: var(--rp-bg); }
+.text-token { color: var(--rp-fg); }

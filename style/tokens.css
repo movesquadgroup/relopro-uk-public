@@ -1,0 +1,37 @@
+:root {
+  /* Base colors (light theme) */
+  --rp-bg: #ffffff;
+  --rp-fg: #0f172a;          /* slate-900 */
+  --rp-muted: #64748b;       /* slate-500 */
+
+  /* Brand / accents */
+  --rp-primary: #2563eb;     /* blue-600 */
+  --rp-accent: #22c55e;      /* green-500 */
+  --rp-link: #1d4ed8;        /* blue-700 */
+
+  /* Surfaces */
+  --rp-card: #ffffff;
+  --rp-border: #e2e8f0;      /* slate-200 */
+
+  /* Sidebar (your “vibrant” light blue) */
+  --rp-sidebar-bg: #e8f1ff;  /* gentle light blue */
+  --rp-sidebar-fg: #0b3b91;  /* readable navy-ish text */
+}
+
+/* Dark mode (activated by body.theme-dark) */
+body.theme-dark {
+  --rp-bg: #0b1220;          /* deep navy */
+  --rp-fg: #e2e8f0;          /* slate-200 */
+  --rp-muted: #94a3b8;       /* slate-400 */
+
+  --rp-primary: #60a5fa;     /* blue-400 */
+  --rp-accent: #34d399;      /* green-400 */
+  --rp-link: #93c5fd;        /* blue-300 */
+
+  --rp-card: #0f172a;        /* slate-900-ish */
+  --rp-border: #1e293b;      /* slate-800 */
+
+  /* Keep sidebar clearly blue in dark, but deeper */
+  --rp-sidebar-bg: #0d2247;  /* deep blue */
+  --rp-sidebar-fg: #e2e8f0;  /* light text */
+}

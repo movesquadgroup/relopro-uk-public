@@ -1,4 +1,4 @@
-import { Blob } from '@google/genai';
+import { Blob } from '@google/generative-ai';
 
 /**
  * Encodes a Uint8Array into a base64 string.

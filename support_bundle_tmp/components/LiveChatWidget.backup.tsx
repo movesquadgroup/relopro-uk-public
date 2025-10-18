@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { GoogleGenAI, LiveSession, LiveServerMessage, Modality, Blob } from '@google/genai';
+import { GoogleGenAI, LiveSession, LiveServerMessage, Modality, Blob } from '@google/generative-ai';
 import { CloseIcon, MicrophoneIcon } from './icons/Icons';
 import { encode, decode, decodeAudioData, createBlob } from '../lib/audioUtils';
 
