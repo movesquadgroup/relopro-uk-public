@@ -9,10 +9,11 @@
     "preview": "vite preview",
     "predev": "node scripts/preflight.cjs",
     "prebuild": "node scripts/preflight.js",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && vite build"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.21.0",
+    "@google/generative-ai": "0.21.0",
     "@hello-pangea/dnd": "^18.0.1",
     "@vitejs/plugin-react": "^5.0.4",
     "firebase": "^12.4.0",
@@ -31,7 +32,7 @@
     "vite-tsconfig-paths": "5.1.4"
   },
   "engines": {
-    "node": ">=20 <21"
+    "node": ">=20.19.5 <21"
   },
   "packageManager": "npm@10"
 }
