@@ -1,4 +1,6 @@
 import React from 'react';
+
+import SafeModeBanner from "./components/SafeModeBanner";
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 
@@ -14,6 +16,7 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <App />
-    </HashRouter>
+      <SafeModeBanner />
+        </HashRouter>
   </React.StrictMode>
 );
